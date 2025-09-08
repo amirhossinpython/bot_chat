@@ -1,0 +1,4 @@
+aiosqlite
+rubpy
+httpx
+g4f[all]
