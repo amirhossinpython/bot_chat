@@ -30,7 +30,7 @@ bot = BotClient(token="توکن_ربات_خود")
 
 ### ۴. اجرای ربات
 ```bash
-python main.py
+python bot.py
 ```
 
 ---
