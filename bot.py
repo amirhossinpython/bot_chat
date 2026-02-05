@@ -240,11 +240,12 @@ async def handle_private(bot: BotClient, message: Update):
 
     waiting_msg = await message.reply("⏳ در حال پردازش... لطفاً صبر کنید")
     
-    responses = await asyncio.gather(
-        mirbot.ask_gpt4(text),
-        mirbot.ask_headait(text),
+   responses = await asyncio.gather(
+  
+        mirbot.get_response_from_chat(text),
         return_exceptions=True
     )
+    
     
     
     valid_responses = [r for r in responses if isinstance(r, str) and r.strip()]
@@ -289,8 +290,8 @@ async def handle_group(bot: BotClient, message: Update):
     waiting_msg = await message.reply("⏳ در حال پردازش... لطفاً صبر کنید")
     
     responses = await asyncio.gather(
-        mirbot.ask_gpt4(text),
-        mirbot.ask_headait(text),
+  
+        mirbot.get_response_from_chat(text),
         return_exceptions=True
     )
     
